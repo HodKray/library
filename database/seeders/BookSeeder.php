@@ -114,16 +114,6 @@ class BookSeeder extends Seeder
                         'start_date' => '2021-06-12',
                         'end_date' => '2021-06-24',
                     ],
-                    [
-                        'reader_id' => 1,
-                        'start_date' => '2021-03-23',
-                        'end_date' => '2021-07-24',
-                    ],
-                    [
-                        'reader_id' => 1,
-                        'start_date' => '2021-06-20',
-                        'end_date' => '2022-06-20',
-                    ],
                 ]
             ],
         ];

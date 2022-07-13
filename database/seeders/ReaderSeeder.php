@@ -34,7 +34,7 @@ class ReaderSeeder extends Seeder
                 'date_of_birth' => '2002-01-24',
             ],
             [
-                'fio' => 'Бондарчук Кирилл Александрович',
+                'fio' => 'Петров Александр Александрович',
                 'date_of_birth' => '2003-04-02',
             ],
         ];

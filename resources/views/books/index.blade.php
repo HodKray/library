@@ -2,14 +2,14 @@
 @section('content')
 <h2 class="d-flex justify-content-center mt-3">Книги</h2>
 <div class="container mt-4">
-    <div class="justify-content-center">{{$books->render()}}</div>
+    <div class="d-flex justify-content-center">{{$books->render()}}</div>
 <div class="d-flex text-center">
     <table class="table bg-body table-striped">
         <thead class="thead-dark">
         <tr>
             <th>id</th>
             <th>Фото</th>
-            <th>Количество</th>
+
             <th>Название</th>
             <th>Категория</th>
             <th>Полка</th>
@@ -24,9 +24,7 @@
                 <td>
                     <img width="140px" height="200px" src="/img/{{$book->photo}}">
                 </td>
-                <td>
-                    <p class="">{{$book->count}}</p>
-                </td>
+
                 <td>
                     <p class="">{{$book->title}}</p>
                 </td>

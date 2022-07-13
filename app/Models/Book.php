@@ -31,7 +31,7 @@ class Book extends Model
     }
 
     public function readers() {
-        return $this->belongsToMany(Reader::class, 'book_reader');
+        return $this->belongsToMany(Reader::class, 'book_reader')->withPivot(['start_date', 'end_date']);
     }
 
     public function tags() {

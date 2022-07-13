@@ -21,10 +21,7 @@
             </select>
 
 
-        <div class="mb-2 mt-3">
-            <label for="count" class="form-label">Количество:</label>
-            <input  type="text" class="form-control" name="count" maxlength="20" required>
-        </div>
+
 
         <div class="mt-3">
         <label for="title" class="form-label">Фото книги:</label>
