@@ -27,15 +27,23 @@ Route::prefix('/books')->controller(\App\Http\Controllers\BookController::class)
     Route::get('/list', 'list');
 });
 Route::prefix('/reader')->controller(\App\Http\Controllers\ReaderController::class)->group(function () {
-    Route::get('/readJournal', 'JournalView');
-    Route::post('/add', 'takeBooks');
     Route::get('/create', 'createView');
     Route::post('/create', 'createReaders');
-    Route::post('read/{id}', 'read');
-    Route::get('read/{id}', 'viewUpdate');
-    Route::post('read/{id}', 'read');
+    Route::get('/list', 'list');
+    Route::get('delete/{id}', 'ReaderDelete');
+});
+Route::prefix('/readJournal')->controller(\App\Http\Controllers\ReaderController::class)->group(function () {
+    Route::get('/list', 'JournalView');
+    Route::get('/add', 'addToJournalView');
+    Route::post('/add', 'addToJournal');
     Route::get('update/{id}', 'viewUpdate');
     Route::post('update/{id}', 'update');
-    Route::get('delete/{id}', 'BookDelete');
-    Route::get('/list', 'list');
+
+});
+
+Route::prefix('/tag')->controller(\App\Http\Controllers\TagController::class)->group(function () {
+    Route::get('/list', 'listTag');
+    Route::get('/create', 'createViewTag');
+    Route::post('/create', 'createTag');
+
 });

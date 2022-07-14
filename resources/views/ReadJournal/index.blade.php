@@ -2,7 +2,9 @@
 @section('content')
     <h2 class="text-center mt-3">Журнал чтения</h2>
     <div class="container mt-4">
-
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <a href="/readJournal/add/"><button class="btn btn-primary">Добавить в журнал чтения</button></a>
+        </div>
         <div class="d-flex text-center">
             <table class="table table-warning table-borderless">
                 @foreach($readers as $reader)
@@ -23,8 +25,10 @@
                             <td>{{$book->pivot->start_date}}</td>
                             <td>{{$book->pivot->end_date}}</td>
                         </tr>
+
                     @endforeach
                 </tbody>
+
                 @endforeach
             </table>
         </div>

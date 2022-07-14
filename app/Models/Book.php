@@ -12,13 +12,12 @@ class Book extends Model
     protected $fillable =[
         'title',
         'shelf_id',
-        'count',
         'category_id',
         'photo',
+
     ];
 
-    public function category()
-    {
+    public function category(){
         return $this->belongsTo(Category::class, 'category_id');
     }
 
@@ -27,7 +26,7 @@ class Book extends Model
     }
 
     public function authors() {
-        return $this->belongsToMany(Author::class);
+        return $this->belongsToMany(Author::class,'book_author');
     }
 
     public function readers() {
@@ -35,6 +34,16 @@ class Book extends Model
     }
 
     public function tags() {
-        return $this->belongsToMany(Tag::class, 'book_reader');
+        return $this->belongsToMany(Tag::class, 'book_tag');
+    }
+
+    public function detachAllAuthors()
+    {
+        $this->authors()->delete();
+    }
+
+    public function detachAllTags()
+    {
+        $this->tags()->delete();
     }
 }

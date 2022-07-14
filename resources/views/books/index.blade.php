@@ -2,15 +2,16 @@
 @section('content')
 <h2 class="d-flex justify-content-center mt-3">Книги</h2>
 <div class="container mt-4">
-    <div class="d-flex justify-content-center">{{$books->render()}}</div>
+
 <div class="d-flex text-center">
     <table class="table bg-body table-striped">
         <thead class="thead-dark">
         <tr>
             <th>id</th>
             <th>Фото</th>
-
             <th>Название</th>
+            <th>Автор</th>
+            <th>Тэг</th>
             <th>Категория</th>
             <th>Полка</th>
             <th>Редактировать</th>
@@ -21,12 +22,19 @@
         @foreach($books as  $book )
             <tr>
                 <td>{{$book->id}}</td>
+                <td><img width="140px" height="200px" src="/img/{{$book->photo}}"></td>
                 <td>
-                    <img width="140px" height="200px" src="/img/{{$book->photo}}">
+                {{$book->title}}
                 </td>
-
                 <td>
-                    <p class="">{{$book->title}}</p>
+                @foreach($book->authors as  $author )
+                    {{$author->fio}}
+                @endforeach
+                </td>
+                <td>
+                    @foreach($book->tags as  $tag )
+                        {{$tag->title}}
+                    @endforeach
                 </td>
                 <td>{{$book->Category->title}}</td>
                 <td>{{$book->Shelf->title}}</td>
@@ -42,5 +50,5 @@
     </table>
 </div>
 </div>
-<div class="d-flex justify-content-center">{{$books->render()}}</div>
+
 @endsection

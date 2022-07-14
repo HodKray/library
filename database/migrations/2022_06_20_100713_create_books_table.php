@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('shelf_id');
-            $table->integer('count');
             $table->integer('category_id');
             $table->string('photo');
         });

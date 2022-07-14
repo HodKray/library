@@ -31,6 +31,24 @@
                     </div>
                 @endforeach
             </select>
+
+            <label for="category_id" class="form-label mt-3">Авторы</label>
+            <select class="form-select" name="author_ids[]" multiple>
+                @foreach($authors as $author)
+                    <div class="form_input">
+                        <option value="{{$author->id}}">{{$author->fio}}</option>
+                    </div>
+                @endforeach
+            </select>
+
+            <label for="category_id" class="form-label mt-3">Теги</label>
+            <select class="form-select" name="tag_ids[]" multiple="multiple">
+                @foreach($tags as $tag)
+                    <div class="form_input">
+                        <option value="{{$tag->id}}">{{$tag->title}}</option>
+                    </div>
+                @endforeach
+            </select>
             <div class="d-flex justify-content-center mt-5">
                 <input class="btn btn-primary" type="submit" value="Редактировать">
             </div>
